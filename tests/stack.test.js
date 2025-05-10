@@ -17,3 +17,12 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBeDefined();
     expect(stack.peek()).toBe(42);
 });
+
+test('peek does not remove the top value from the stack', () => {
+    stack.push("test");
+    let firstPeek = stack.peek();   // Förväntas ge "test"
+    let secondPeek = stack.peek();  // Förväntas ge "test" igen
+
+    expect(firstPeek).toBe("test");
+    expect(secondPeek).toBe("test"); // Denna rad kommer att MISSLYCKAS om peek tar bort
+});
