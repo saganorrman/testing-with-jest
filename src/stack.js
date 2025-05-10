@@ -1,4 +1,5 @@
 const _ = require('underscore');
+const _ = require('lodash');
 
 let stack = [];
 
@@ -14,5 +15,5 @@ exports.pop = function () {
 
 // Returnerar det översta elementet i stacken
 exports.peek = function () {
-    return stack.pop(); // FEL – detta tar bort översta värdet
+    return _.last(stack); // visar utan att ta bort
 }
