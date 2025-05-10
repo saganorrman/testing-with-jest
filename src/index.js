@@ -12,7 +12,7 @@ window.onload = function () {
         var removed = stack.pop();
         alert("Tog bort " + removed);
         const top = stack.peek();
-        display.innerHTML = top !== undefined ? top : "n/a"; // 👈 uppdatera visningen efter pop
+        display.innerHTML = top !== undefined ? top : "n/a"; // uppdatera visningen efter pop
     });
 
     push.addEventListener("click", function() {
