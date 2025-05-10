@@ -14,5 +14,5 @@ exports.pop = function () {
 
 // Returnerar det översta elementet i stacken
 exports.peek = function () {
-    return stack.pop(); // BUGG: Tar bort värdet istället för att bara visa det
+    return _.last(stack);
 }
