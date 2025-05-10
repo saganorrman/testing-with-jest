@@ -46,6 +46,9 @@ test('Att klicka på pop uppdaterar top_of_stack till n/a', async () => {
     // Tryck på "pop"-knappen
     const pop = await driver.findElement(By.id('pop'));
     await pop.click();
+    
+    // Vänta på att alerten stänger sig
+    await driver.switchTo().alert().accept();
 
     // Kolla att stacken är tom igen (top_of_stack visar "n/a")
     const top = await driver.findElement(By.id('top_of_stack')).getText();
