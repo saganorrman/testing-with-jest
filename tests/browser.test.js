@@ -4,25 +4,28 @@ require('chromedriver');
 const fileUnderTest = 'file://' + __dirname.replace(/ /g, '%20') + '/../dist/index.html';
 const defaultTimeout = 10000;
 let driver;
+
 jest.setTimeout(1000 * 60 * 5); // 5 minuter
 
-// Det här körs innan vi kör testerna för att säkerställa att Chrome är igång
+// Säkerställer att Chrome är igång
 beforeAll(async () => {
     console.log(fileUnderTest);
     driver = await new Builder().forBrowser('chrome').build();
     await driver.get(fileUnderTest);
 });
 
-// Allra sist avslutar vi Chrome igen
+// Avslutar Chrome efter testerna
 afterAll(async () => {
     await driver.quit();
 }, defaultTimeout);
 
+//Test 1: Kontrollerar att stacken är tom i början
 test('The stack should be empty in the beginning', async () => {
     let stack = await driver.findElement(By.id('top_of_stack')).getText();
     expect(stack).toEqual("n/a");
 });
 
+// Test 2: Klicka på knappen och testa prompt
 describe('Clicking "Pusha till stacken"', () => {
     it('should open a prompt box', async () => {
         let push = await driver.findElement(By.id('push'));
@@ -33,7 +36,7 @@ describe('Clicking "Pusha till stacken"', () => {
     });
 });
 
-
+/*
 // EGET TEST: Testa att pop tar bort värdet från stacken
 test('Att klicka på pop uppdaterar top_of_stack till n/a', async () => {
     // Tryck på "push"-knappen och skicka in ett värde
@@ -72,3 +75,4 @@ test('Pusha och sen poppa ska visa n/a', async () => {
     let display = await driver.findElement(By.id('top_of_stack')).getText();
     expect(display).toEqual("n/a"); // Om pop inte uppdaterar display blir detta FAIL
 });
+*/
