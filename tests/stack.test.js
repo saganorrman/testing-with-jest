@@ -18,6 +18,18 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBe(42);
 });
 
+//Testar att clear() verkligen tömmer stacken.
+test('should clear the stack completely', () => {
+    stack.push("Test1");
+    stack.push("Test2");
+
+    stack.clear();
+
+    expect(stack.size()).toBe(0);
+    expect(stack.isEmpty()).toBe(true);
+    expect(stack.peek()).toBe(undefined);
+});
+
 /*
 test('peek does not remove the top value from the stack', () => {
     stack.push("test");
