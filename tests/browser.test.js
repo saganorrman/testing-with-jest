@@ -53,6 +53,6 @@ describe('Clicking "Poppa från stacken" when stack is empty', () => {
         }
 
         let stack = await driver.findElement(By.id('top_of_stack')).getText();
-        expect(stack).toEqual("n/a...");
+        expect(stack).toEqual("n/a");
     });
 });
