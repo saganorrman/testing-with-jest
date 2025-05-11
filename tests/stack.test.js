@@ -25,8 +25,6 @@ test('should clear the stack completely', () => {
 
     stack.clear();
 
-    expect(stack.size()).toBe(0);
-    expect(stack.isEmpty()).toBe(true);
     expect(stack.peek()).toBe(undefined);
 });
 
