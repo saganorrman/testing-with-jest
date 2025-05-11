@@ -17,9 +17,8 @@ exports.peek = function () {
     return _.last(stack);
 }
 
-/*
+
 // Tömmer hela stacken
 exports.clear = function () {
     stack = [];
 };
-Ä*/
