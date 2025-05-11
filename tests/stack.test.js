@@ -27,23 +27,3 @@ test('should clear the stack completely', () => {
 
     expect(stack.peek()).toBe(undefined);
 });
-
-/*
-test('peek does not remove the top value from the stack', () => {
-    stack.push("test");
-    let firstPeek = stack.peek();   // Förväntas ge "test"
-    let secondPeek = stack.peek();  // Förväntas ge "test" igen
-
-    expect(firstPeek).toBe("test");
-    expect(secondPeek).toBe("test"); // Denna rad kommer att MISSLYCKAS om peek tar bort
-});
-
-test("peek should return the top of the stack without removing it", () => {
-    const stack = require('../src/stack');
-    stack.push("äpple");
-    let top = stack.peek();
-    expect(top).toBe("äpple");
-    let nextTop = stack.peek();
-    expect(nextTop).toBe("äpple"); // Detta kommer att FAILA om peek() poppar
-});
-*/
